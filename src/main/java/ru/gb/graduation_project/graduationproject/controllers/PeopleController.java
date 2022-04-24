@@ -7,9 +7,10 @@ import org.springframework.web.bind.annotation.*;
 import ru.gb.graduation_project.graduationproject.models.Person;
 import ru.gb.graduation_project.graduationproject.services.PersonService;
 
+import java.util.List;
 import java.util.Optional;
 
-@Controller
+@RestController
 @RequiredArgsConstructor
 @RequestMapping("/people")
 public class PeopleController {
@@ -17,7 +18,8 @@ public class PeopleController {
     private final PersonService personService;
 
     @GetMapping()
-     public Optional<Person> getAllPerson() {
+     public List<Person> getAllPerson() {
+        System.out.println("getAllPerson()= "+ personService.getAll());
           return personService.getAll();
       }
 

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import ru.gb.graduation_project.graduationproject.models.Person;
 import ru.gb.graduation_project.graduationproject.repositories.PersonRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -12,8 +13,8 @@ import java.util.Optional;
 public class PersonService {
     private final PersonRepository personRepository;
 
-    public Optional<Person> getAll() {
-        return personRepository.getAll();
+    public List<Person> getAll() {
+        return personRepository.findAll();
     }
 
     public Optional<Person> findByPasport(String pasport) {
